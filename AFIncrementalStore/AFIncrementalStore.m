@@ -42,7 +42,7 @@ static NSString * const kAFIncrementalStoreLastModifiedAttributeName = @"__af_la
 static NSString * const kAFReferenceObjectPrefix = @"__af_";
 
 inline NSString * AFReferenceObjectFromResourceIdentifier(NSString *resourceIdentifier) {
-    if (!resourceIdentifier) {
+    if ((!resourceIdentifier) || (resourceIdentifier == [NSNull null])) {
         return nil;
     }
     
